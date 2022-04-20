@@ -1,0 +1,27 @@
+{
+  "name": "local_lambda_runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main_api.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1116.0",
+    "express": "^4.17.3",
+    "extract-zip": "^2.0.1",
+    "jest-junit": "^13.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
