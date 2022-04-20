@@ -54,5 +54,5 @@ function getLambdaEntryPoint(name, location) {
 }
 
 exports.startServer().then(() => {
-    console.log("shutting down mock server.")
+    console.log("finished setting up server")
 })
