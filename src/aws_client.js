@@ -70,7 +70,7 @@ async function downloadLambdas(routes) {
     });
 
     if (config.api.download) {
-        fs.mkdirSync(lambdaZipsDir)
+        fs.mkdirSync(`${__dirname}/${lambdaZipsDir}`)
     }
 
     const lambdaNames = new Set()
@@ -93,7 +93,7 @@ async function downloadLambda(lambdaClient, lambdaName) {
     }
 
     if (config.api.download) {
-        const zipPath = `${lambdaZipsDir}/${lambdaName}.zip`
+        const zipPath = `${__dirname}/${lambdaZipsDir}/${lambdaName}.zip`
         await new Promise((resolve, reject) => {
             const file = fs.createWriteStream(zipPath);
             https.get(lambda.Code.Location, function (response) {
@@ -112,7 +112,7 @@ async function downloadLambda(lambdaClient, lambdaName) {
             throw error
         })
 
-        await extract(zipPath, {dir: resolve(`${lambdasDir}/${lambdaName}`)})
+        await extract(zipPath, {dir: resolve(`${__dirname}/${lambdasDir}/${lambdaName}`)})
         console.log(`Extracted ${zipPath} to ${lambdasDir}`)
     }
 }

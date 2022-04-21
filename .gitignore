@@ -5,6 +5,4 @@
 /node_modules/
 /src/lambdas
 /src/lambdaZips
-lambdas
-lambdaZips
 config.js
