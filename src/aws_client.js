@@ -32,8 +32,8 @@ exports.downloadApis = async () => {
 
 async function downloadRoutes(apiGatewayClient, routes, apiId) {
     if (config.api.download) {
-        fs.rmSync(lambdasDir, {recursive: true, force: true})
-        fs.rmSync(lambdaZipsDir, {recursive: true, force: true})
+        fs.rmSync(`${__dirname}/${lambdasDir}`, {recursive: true, force: true})
+        fs.rmSync(`${__dirname}/${lambdaZipsDir}`, {recursive: true, force: true})
     }
 
     const awsRoutes = await apiGatewayClient.getRoutes({
